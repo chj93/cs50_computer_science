@@ -49,22 +49,22 @@ void printArr(int arr[], int leng){
     printf("\n");
 }
 
-//배열 정렬 - 재귀함수로. 실패!
-/*void sort(int arr[],int leng){
+//배열 정렬 - 재귀함수로(8.17수정)
+void sort_recursive(int arr[],int leng){
 
     int temp;
-    int ckIdx=1;
 
-    for(int i=0;i<leng;i++){
-        if(arr[i]>arr[ckIdx]){
-            temp=arr[ckIdx];
-            arr[ckIdx]=arr[i];
+    for(int i=0; i<leng; i++){
+        if(arr[i]>arr[i+1]){
+            temp=arr[i+1];
+            arr[i+1]=arr[i];
             arr[i]=temp;
         }
+
+        sort_recursive(arr,leng-1);
     }
-    ckIdx++;
-    if(ckIdx<=leng) sort(arr,leng);
-}*/
+
+}
 
 //배열 정렬
 void sort(int arr[], int leng){
